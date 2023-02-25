@@ -26,7 +26,22 @@ namespace SimonChung_Assignment2.Controllers
         /// <param name="id3"></param>
         /// <param name="id4"></param>
         /// <param name="id5"></param>
-        /// <returns></returns>
+        /// <returns>The direction and number of steps to take for each integer inputed, and the string "99999"</returns>
+        /// <example>
+        /// GET api/J3/Directions/12345/00222/80800/11111 -> 
+        /// left 345 
+        /// left 222
+        /// right 800
+        /// right 111
+        /// 99999
+        /// 
+        /// GET api/J3/Directions/88345/11321/79809/24511 -> 
+        /// right 345
+        /// right 321
+        /// right 809
+        /// right 511
+        /// 99999
+        /// </example>
         [HttpGet]
 
         public IEnumerable<string> Directions(int id1, int id2, int id3, int id4)
@@ -71,7 +86,7 @@ namespace SimonChung_Assignment2.Controllers
             //are odd, even and not zero, or zero
             //IF the sum of the first 2 digits are odd, create a string variable with value "left"
             //IF even and not zero, string variable has value "right"
-            //IF equal to zero, string variable has value of previous input
+            //IF equal to zero, string variable has value of preceding integer's direction
 
             string f1;
             string f2;
